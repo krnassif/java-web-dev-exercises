@@ -1,44 +1,24 @@
 package org.launchcode.java.studios.restaurant;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 public class Menu {
-private String mealCategories;
-private String description;
-private double price;
-private boolean isNew;
+    private final ArrayList<MenuItem> menuItems = new ArrayList<>();
+    private LocalDate lastUpdated;
+    private String name;
 
+    public void addMenuItem(MenuItem item) {this.menuItems.add(item);}
+    public ArrayList<MenuItem> getMenuItems() {return menuItems;}
+    public LocalDate getLastUpdated() {return lastUpdated; }
+    public void setLastUpdated() {this.lastUpdated = LocalDate.now();}
+    public String getName() { return this.name; }
 
-public Menu (String mealCategories,String description,double price,boolean isNew) {
-        this.mealCategories = mealCategories;
-        this.description = description;
-        this.price = price;
-        this.isNew = isNew;
+    public void setName(String name) { this.name = name; }
+    public void printMenuItem (MenuItem item) {
+        System.out.println(item.getName());
+        System.out.println(item.getMealCategories());
+        System.out.println(item.getDescription());
+        System.out.println(item.getPrice());
+    }
+
 }
-    public String getMealCategories() {
-        return this.mealCategories;
-    }
-
-    public String getDescription(){
-        return this.description;
-    }
-
-    public double getPrice(){
-        return this.price;
-    }
-
-    public boolean getIsNew(){
-        return this.isNew;
-    }
-
-    public void setMealCategories(String appetizers) {
-        mealCategories = appetizers;
-    }
-
-    public void setDescription(String wings) {
-        description = "wings";
-    }
-
-    public void setPrice(double wingPrice) {
-        price = 3.99;
-    }
-}
-
